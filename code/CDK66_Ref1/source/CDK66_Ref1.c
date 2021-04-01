@@ -50,7 +50,8 @@
 int beepFlag = 0;
 uint16_t beepCnt = 0;
 const uint16_t beepGap = 50;
-static uint32_t sw1Flag = 1;
+uint8_t sw1Flag = 0;
+uint8_t sw1NFlag = 0;
 uint8_t ResetFlag = 0;
 uint8_t stopFlag = 0;
 uint8_t TS2ResetFlag = 0;
@@ -58,8 +59,8 @@ uint16_t CountMAX = 10;
 uint8_t QESPFlag = 1;
 uint16_t Var1 = 0;
 uint8_t INTF = 0;
-uint16_t DetectSig = 0;
-uint8_t INTF2 = 0;
+//uint16_t DetectSig = 0;
+
 
 /* TODO: insert other include files here. */
 
@@ -120,7 +121,7 @@ void APPTICK_PIT_HANDLER(void)
     PIT_ClearStatusFlags(PIT, kPIT_Chnl_0, kPIT_TimerFlag);
     appTick++;
     appTick2++;
-    DetectSig++;
+    //DetectSig++;
     if(beepFlag && (beepCnt < beepGap))
     {
     	beepCnt++;
@@ -148,6 +149,7 @@ void BOARD_RESa_IRQ_HANDLER(void)
     {
     	INTF = 0;
     }
+    Var2 %= 256;
     delay();//Delete this line if unnecessary.
 	/*if(!INTF)
 	{
@@ -265,12 +267,14 @@ void initVar(void)
 	INTF		 =	 0;
 	//INTF2		 =	 1;
 	ShowNumOFF();
-	//OLED_P8x16Str(0,0," RESET NOW  ");
+	OLED_P8x16Str(0,0," RESET NOW  ");
+	delay_long();
+	OLED_P8x16Str(0,0,"            ");
 	BOARD_I2C_GPIO(0);
 }
 int main(void) {
 
-	uint16_t testCode = 0;
+	//uint16_t testCode = 0;
 
   	/* Init board hardware. */
     BOARD_InitBootPins();
@@ -300,17 +304,28 @@ int main(void) {
 	/* Enter an infinite loop, just incrementing a counter. */
     while(1) {
 
-    	if(sw1Flag != SW1())
-    	{
-    		initVar();
-    	}
+
     	if(SW1())
     	{
+    		if(!sw1Flag)
+    		{
+    			sw1Flag = 1;
+    			sw1NFlag = 0;
+    			initVar();
+    		}
     		Task1();
     	}
-    	else Task2();
+    	else
+    	{
+    		if(!sw1NFlag)
+    		{
+    			sw1Flag = 0;
+    			sw1NFlag = 1;
+    		}
+    		Task2();
+    	}
 
-    	sw1Flag = SW1();
+
     }
     return 0 ;
 }
