@@ -51,7 +51,6 @@ int beepFlag = 0;
 uint16_t beepCnt = 0;
 const uint16_t beepGap = 50;
 uint8_t sw1Flag = 0;
-uint8_t sw1NFlag = 0;
 uint8_t ResetFlag = 0;
 uint8_t stopFlag = 0;
 uint8_t TS2ResetFlag = 0;
@@ -121,7 +120,6 @@ void APPTICK_PIT_HANDLER(void)
     PIT_ClearStatusFlags(PIT, kPIT_Chnl_0, kPIT_TimerFlag);
     appTick++;
     appTick2++;
-    //DetectSig++;
     if(beepFlag && (beepCnt < beepGap))
     {
     	beepCnt++;
@@ -303,29 +301,23 @@ int main(void) {
 
 	/* Enter an infinite loop, just incrementing a counter. */
     while(1) {
-
-
     	if(SW1())
     	{
     		if(!sw1Flag)
     		{
     			sw1Flag = 1;
-    			sw1NFlag = 0;
     			initVar();
     		}
     		Task1();
     	}
     	else
     	{
-    		if(!sw1NFlag)
+    		if(sw1Flag)
     		{
     			sw1Flag = 0;
-    			sw1NFlag = 1;
     		}
     		Task2();
     	}
-
-
     }
     return 0 ;
 }
