@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.13)  2 APR 2021 14:28
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.13)  2 APR 2021 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,30 +1094,30 @@ File: graph/1-1.jpg Graphic file (type bmp)
 <graph/1-1.jpg>
 File: graph/1-3.jpg Graphic file (type bmp)
 <graph/1-3.jpg>
- [10] [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
+ [10]
+File: graph/1-2.jpg Graphic file (type bmp)
+<graph/1-2.jpg>
+File: graph/1-4.jpg Graphic file (type bmp)
+<graph/1-4.jpg>
+File: graph/1-5.jpg Graphic file (type bmp)
+<graph/1-5.jpg>
+ [11] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 328.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 328.
  (./report.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 307.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
-
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: F1E671BDE92C43C63CF3383BF21EDB19;2312
-(rerunfilecheck)             After:  7D104F9FE0A7519D47C83D19825092F0;2336.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 328.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 328.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: AF48DE427C3DC6FA42885EC32C2C7B6C;2499.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 328.
  ) 
 Here is how much of TeX's memory you used:
- 30011 strings out of 479418
- 625758 string characters out of 5888105
+ 30023 strings out of 479418
+ 625926 string characters out of 5888105
  1141902 words of memory out of 5000000
- 46935 multiletter control sequences out of 15000+600000
+ 46945 multiletter control sequences out of 15000+600000
  598979 words of font info for 149 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  68i,11n,70p,500b,1914s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.pdf (12 pages).
+Output written on report.pdf (13 pages).

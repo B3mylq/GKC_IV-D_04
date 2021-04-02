@@ -20,3 +20,5 @@
 \contentsline {section}{\numberline {4}实验结果}{10}{section.4}%
 \contentsline {subsection}{\numberline {4.1}使用拨码开关SW1切换任务}{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}任务1的执行}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}任务2的执行}{11}{subsection.4.3}%
+\contentsline {section}{\numberline {5}结论}{11}{section.5}%
